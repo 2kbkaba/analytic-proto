@@ -2,7 +2,12 @@ syntax = "proto3";
 
 package recipient;
 
-service RecipientService {}
+service RecipientService {
+  rpc FindOne (FindOneRequest) returns (FindOneResponse) {}
+  rpc CreateRecipient (CreateRecipientRequest) returns (CreateRecipientResponse) {}
+  rpc UpdateRecipient (UpdateRecipientRequest) returns (UpdateRecipientResponse) {}
+  rpc RemoveRecipient (RemoveRecipientRequest) returns (RemoveRecipientResponse) {}
+}
 
 // Recipient Data
 message RecipientData {
