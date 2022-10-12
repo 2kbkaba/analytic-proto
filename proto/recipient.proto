@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package recipient;
+
+service RecipientService {}
+
+// Recipient Data
+message RecipientData {
+  string firstname = 1;
+  string lastname = 2;
+  string countryOfBirth = 3;
+  string dateOfBirth = 4;
+  string birthplace = 5;
+  string cid = 6;
+  string gender = 7;
+  string phones = 8;
+  string location = 9;
+  string address = 10;
+  string maritalStatus = 11;
+}
+
+// CreateRecipient
+
+message CreateRecipientRequest {
+  RecipientData recipient = 1;
+}
+
+message CreateRecipientResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  int32 id = 3;
+}
+
+// FindOne
+
+message FindOneRequest {
+  int32 id = 1;
+}
+
+message FindOneResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  RecipientData data = 3;
+}
+
+// UpdateRecipient
+
+message UpdateRecipientRequest {
+  int32 id = 1;
+  RecipientData recipient = 2;
+}
+
+message UpdateRecipientResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  string data = 3;
+}
+
+// RemoveRecipient
+
+message RemoveRecipientRequest {
+  int32 id = 1;
+}
+
+message RemoveRecipientResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}
