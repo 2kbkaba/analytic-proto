@@ -62,7 +62,17 @@ message FindOneResponse {
 
 message UpdateRecipientRequest {
   int32 id = 1;
-  RecipientData recipient = 2;
+  string firstname = 2;
+  string lastname = 3;
+  string countryOfBirth = 4;
+  string dateOfBirth = 5;
+  string birthplace = 6;
+  string cid = 7;
+  string gender = 8;
+  string phones = 9;
+  string location = 10;
+  string address = 11;
+  string maritalStatus = 12;
 }
 
 message UpdateRecipientResponse {
