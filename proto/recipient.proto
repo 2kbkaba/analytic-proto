@@ -27,7 +27,7 @@ message RecipientData {
 // CreateRecipient
 
 message CreateRecipientRequest {
-  RecipientData recipient = 1;
+  RecipientData recipient = 11;
 }
 
 message CreateRecipientResponse {
