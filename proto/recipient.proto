@@ -78,7 +78,7 @@ message UpdateRecipientRequest {
 message UpdateRecipientResponse {
   int32 status = 1;
   repeated string error = 2;
-  string data = 3;
+  RecipientData data = 3;
 }
 
 // RemoveRecipient
