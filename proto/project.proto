@@ -1,0 +1,103 @@
+syntax = "proto3";
+
+package project;
+
+service ProjectService {
+  rpc FindById (FindByIdRequest) returns (FindByIdResponse) {}
+  rpc FindByRecipient (FindByRecipientRequest) returns (FindByRecipientResponse) {}
+  rpc CreateProject (CreateProjectRequest) returns (CreateProjectResponse) {}
+  rpc UpdateProject (UpdateProjectRequest) returns (UpdateProjectResponse) {}
+  rpc RemoveProject (RemoveProjectRequest) returns (RemoveProjectResponse) {}
+}
+
+// Project Data
+message ProjectData {
+  string id = 1;
+  string recipientId = 2;
+  string location = 3;
+  string entitled = 4;
+  string description = 5;
+  string status = 6;
+  string sectors = 7;
+  string subSector = 8;
+  repeated string productOrService = 9;
+  string dateOfCreate = 10;
+  string dateOfFirstActivity = 11;
+  string createdAt = 12;
+  string updatedAt = 13;
+}
+
+// FindOne
+
+message FindByIdRequest {
+  string id = 1;
+}
+
+message FindByIdResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  ProjectData data = 3;
+}
+
+message FindByRecipientRequest {
+  string recipientId = 1;
+}
+
+message FindByRecipientResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  repeated ProjectData data = 3;
+}
+
+// CreateProject
+
+message CreateProjectRequest {
+  string recipientId = 1;
+  string location = 2;
+  string entitled = 3;
+  string description = 4;
+  string status = 5;
+  string sectors = 6;
+  string subSector = 7;
+  repeated string productOrService = 8;
+  string dateOfCreate = 9;
+  string dateOfFirstActivity = 10;
+}
+
+message CreateProjectResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  string id = 3;
+}
+
+// UpdateRecipient
+
+message UpdateProjectRequest {
+  string location = 1;
+  string entitled = 2;
+  string description = 3;
+  string status = 4;
+  string sectors = 5;
+  string subSector = 6;
+  repeated string productOrService = 7;
+  string dateOfCreate = 8;
+  string dateOfFirstActivity = 9;
+}
+
+message UpdateProjectResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  string message = 3;
+}
+
+// RemoveProject
+
+message RemoveProjectRequest {
+  string id = 1;
+}
+
+message RemoveProjectResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  string message = 3;
+}
