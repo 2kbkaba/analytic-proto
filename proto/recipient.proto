@@ -4,6 +4,7 @@ package recipient;
 
 service RecipientService {
   rpc FindOne (FindOneRequest) returns (FindOneResponse) {}
+  rpc FindAll (FindAllRequest) returns (FindAllResponse) {}
   rpc CreateRecipient (CreateRecipientRequest) returns (CreateRecipientResponse) {}
   rpc UpdateRecipient (UpdateRecipientRequest) returns (UpdateRecipientResponse) {}
   rpc RemoveRecipient (RemoveRecipientRequest) returns (RemoveRecipientResponse) {}
@@ -11,17 +12,25 @@ service RecipientService {
 
 // Recipient Data
 message RecipientData {
-  string firstname = 1;
-  string lastname = 2;
-  string countryOfBirth = 3;
-  string dateOfBirth = 4;
-  string birthplace = 5;
-  string cid = 6;
-  string gender = 7;
-  string phones = 8;
-  string location = 9;
-  string address = 10;
-  string maritalStatus = 11;
+  int32 id = 1;
+  string firstname = 2;
+  string lastname = 3;
+  string countryOfBirth = 4;
+  string dateOfBirth = 5;
+  string birthplace = 6;
+  string cid = 7;
+  string gender = 8;
+  string phones = 9;
+  string location = 10;
+  string address = 11;
+  string maritalStatus = 12;
+}
+
+message AllRecipientData {
+  repeated RecipientData recipients = 12;
+  int32 total = 13;
+  int32 count = 14;
+  int32 page = 15;
 }
 
 // CreateRecipient
@@ -56,6 +65,19 @@ message FindOneResponse {
   int32 status = 1;
   repeated string error = 2;
   RecipientData data = 3;
+}
+
+// FindAll
+
+message FindAllRequest {
+  int32 page = 1;
+}
+
+message FindAllResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  AllRecipientData data = 3;
+
 }
 
 // UpdateRecipient
