@@ -9,6 +9,19 @@ service RecipientService {
   rpc RemoveRecipient (RemoveRecipientRequest) returns (RemoveRecipientResponse) {}
 }
 
+// Enum Type
+enum Gender {
+  MALE = 0;
+  FEMALE = 1;
+  OTHER = 2;
+}
+
+enum MaritalStatus {
+  SINGLE = 0;
+  MARRIED = 1;
+  DIVORCED = 2;
+  WIDOWED = 3;
+}
 // Recipient Data
 message RecipientData {
   string firstname = 1;
@@ -17,11 +30,11 @@ message RecipientData {
   string dateOfBirth = 4;
   string birthplace = 5;
   string cid = 6;
-  string gender = 7;
+  Gender gender = 7;
   string phones = 8;
   string location = 9;
   string address = 10;
-  string maritalStatus = 11;
+  MaritalStatus maritalStatus = 11;
 }
 
 // CreateRecipient
@@ -33,11 +46,11 @@ message CreateRecipientRequest {
   string dateOfBirth = 4;
   string birthplace = 5;
   string cid = 6;
-  string gender = 7;
+  Gender gender = 7;
   string phones = 8;
   string location = 9;
   string address = 10;
-  string maritalStatus = 11;
+  MaritalStatus maritalStatus = 11;
 }
 
 message CreateRecipientResponse {
@@ -68,11 +81,11 @@ message UpdateRecipientRequest {
   string dateOfBirth = 5;
   string birthplace = 6;
   string cid = 7;
-  string gender = 8;
+  Gender gender = 8;
   string phones = 9;
   string location = 10;
   string address = 11;
-  string maritalStatus = 12;
+  MaritalStatus maritalStatus = 12;
 }
 
 message UpdateRecipientResponse {
