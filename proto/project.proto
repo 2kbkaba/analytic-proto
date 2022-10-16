@@ -73,15 +73,16 @@ message CreateProjectResponse {
 // UpdateRecipient
 
 message UpdateProjectRequest {
-  string location = 1;
-  string entitled = 2;
-  string description = 3;
-  string status = 4;
-  string sectors = 5;
-  string subSector = 6;
-  repeated string productOrService = 7;
-  string dateOfCreate = 8;
-  string dateOfFirstActivity = 9;
+  string id = 1;
+  string location = 2;
+  string entitled = 3;
+  string description = 4;
+  string status = 5;
+  string sectors = 6;
+  string subSector = 7;
+  repeated string productOrService = 8;
+  string dateOfCreate = 9;
+  string dateOfFirstActivity = 10;
 }
 
 message UpdateProjectResponse {
