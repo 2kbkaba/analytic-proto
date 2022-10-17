@@ -21,7 +21,7 @@ message ProjectData {
   string sectors = 7;
   string subSector = 8;
   repeated string productOrService = 9;
-  string dateOfCreate = 10;
+  string dateOfCreation = 10;
   string dateOfFirstActivity = 11;
   string createdAt = 12;
   string updatedAt = 13;
@@ -60,7 +60,7 @@ message CreateProjectRequest {
   string sectors = 6;
   string subSector = 7;
   repeated string productOrService = 8;
-  string dateOfCreate = 9;
+  string dateOfCreation = 9;
   string dateOfFirstActivity = 10;
 }
 
@@ -81,7 +81,7 @@ message UpdateProjectRequest {
   string sectors = 6;
   string subSector = 7;
   repeated string productOrService = 8;
-  string dateOfCreate = 9;
+  string dateOfCreation = 9;
   string dateOfFirstActivity = 10;
 }
 
