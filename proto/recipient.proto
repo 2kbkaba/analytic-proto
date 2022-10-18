@@ -12,7 +12,7 @@ service RecipientService {
 
 // Recipient Data
 message RecipientData {
-  int32 id = 1;
+  string id = 1;
   string firstname = 2;
   string lastname = 3;
   string countryOfBirth = 4;
@@ -52,13 +52,13 @@ message CreateRecipientRequest {
 message CreateRecipientResponse {
   int32 status = 1;
   repeated string error = 2;
-  int32 id = 3;
+  string id = 3;
 }
 
 // FindOne
 
 message FindOneRequest {
-  int32 id = 1;
+  string id = 1;
 }
 
 message FindOneResponse {
@@ -83,7 +83,7 @@ message FindAllResponse {
 // UpdateRecipient
 
 message UpdateRecipientRequest {
-  int32 id = 1;
+  string id = 1;
   string firstname = 2;
   string lastname = 3;
   string countryOfBirth = 4;
@@ -106,7 +106,7 @@ message UpdateRecipientResponse {
 // RemoveRecipient
 
 message RemoveRecipientRequest {
-  int32 id = 1;
+  string id = 1;
 }
 
 message RemoveRecipientResponse {
