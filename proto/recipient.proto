@@ -24,6 +24,8 @@ message RecipientData {
   string location = 10;
   string address = 11;
   string maritalStatus = 12;
+  string createdAt = 13;
+  string updatedAt = 14;
 }
 
 message AllRecipientData {
