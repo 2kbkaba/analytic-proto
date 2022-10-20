@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package pre_committee;
+
+service PreCommitteeService {}
+
+// Pre CommitteeData
+message PreCommitteeData {
+  string id = 1;
+  string entitled = 2;
+  string description = 3;
+  string scheduled = 4;
+  string location = 5;
+  repeated string sectors = 6;
+  string status = 7;
+  string createdAt = 8;
+  string updatedAt = 9;
+}
+
+message AllPreCommitteeData {
+  repeated PreCommitteeData pre_committees = 1;
+  int32 total = 2;
+  int32 count = 3;
+  int32 page = 4;
+}
+
+// FindOne
+message FindOneRequest {
+  string id = 1;
+}
+
+message FindOneResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  PreCommitteeData data = 3;
+}
+
+// FindAll
+message FindAllRequest {
+  int32 page = 1;
+}
+
+message FindAllResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  AllPreCommitteeData data = 3;
+}
+
+// CreatePreCommittee
+message CreatePreCommitteeRequest {
+  string entitled = 1;
+  string description = 2;
+  string scheduled = 3;
+  string location = 4;
+  repeated string sectors = 5;
+  string status = 6;
+}
+
+message CreatePreCommitteeResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  string message = 3;
+  string id = 4;
+}
+
+// UpdatePreCommittee
+message UpdatePreCommitteeRequest {
+  string id = 1;
+  string entitled = 2;
+  string description = 3;
+  string scheduled = 4;
+  string location = 5;
+  repeated string sectors = 6;
+  string status = 7;
+}
+
+message UpdatePreCommitteeResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  string message = 3;
+}
+
+// RemovePreCommittee
+message RemovePreCommitteeRequest {
+  int32 id = 1;
+}
+
+message RemovePreCommitteeResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  string message = 3;
+}
