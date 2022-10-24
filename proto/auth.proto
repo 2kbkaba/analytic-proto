@@ -24,10 +24,7 @@ message RegisterResponse {
 // Login
 
 message LoginRequest {
-  oneof username {
-    string email = 1;
-    string phone = 2;
-  }
+  string phone = 2;
   string password = 3;
 }
 
