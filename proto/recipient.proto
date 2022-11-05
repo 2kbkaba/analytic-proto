@@ -20,7 +20,7 @@ message RecipientData {
   string birthplace = 6;
   string cid = 7;
   string gender = 8;
-  string phones = 9;
+  repeated string phones = 9;
   string location = 10;
   string address = 11;
   string maritalStatus = 12;
@@ -45,7 +45,7 @@ message CreateRecipientRequest {
   string birthplace = 5;
   string cid = 6;
   string gender = 7;
-  string phones = 8;
+  repeated string phones = 8;
   string location = 9;
   string address = 10;
   string maritalStatus = 11;
@@ -93,7 +93,7 @@ message UpdateRecipientRequest {
   string birthplace = 6;
   string cid = 7;
   string gender = 8;
-  string phones = 9;
+  repeated string phones = 9;
   string location = 10;
   string address = 11;
   string maritalStatus = 12;
